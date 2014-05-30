@@ -1,0 +1,24 @@
+* はじめに
+EclipseのQuick Junit に触発されて作成しました。
+まだつくりかけです。
+
+* 使い方
+
+プロジェクトルートに配置した、prj.elに下記のカスタム変数を追記します。
+#+BEGIN_SRC emacs-lisp
+(jde-set-variables
+  `(jde-quick-junit-project-root-dir (expand-file-name "~/path/to/your-project"))
+  `(jde-quick-junit-main-class-dir "./target/classes")
+  `(jde-quick-junit-test-class-dir "./target/test-classes")
+  `(jde-quick-junit-main-source-dir "./src/main/java")
+  `(jde-quick-junit-test-source-dir "./src/test/java")
+  )
+#+END_SRC
+
+現時点では、F5でテストクラスに切り替えます。
+テストクラスが存在しない場合は、 =/path/to/test/package/*Test.java= を作成します。
+
+* TODO
+- テストクラス単体での実行
+- キーバインドの検討
+- カスタム変数の検討
